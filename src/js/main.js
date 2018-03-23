@@ -15,6 +15,8 @@ $(document).ready(function(){
 
       let doctors = JSON.parse(response);
 
+      $("#responseRow").empty();
+      $(".error").remove();
       doctors.data.forEach(function(doctor){
 
         let doctorName = doctor.practices[0].name;
@@ -36,6 +38,15 @@ $(document).ready(function(){
             </div>
           </div>`)
       });
-    });
+      if (doctors.data.length === 0) {
+        $("body").append(`
+          <div class="container error">
+            <h2>Your search query returned no results</h2>
+          </div>
+          `)
+      }
+    }), function(error){
+      console.error(`There was an error processing your request: ${error.message}`);
+    }
   });
 })
