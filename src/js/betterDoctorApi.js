@@ -12,26 +12,26 @@ var Promise = require('es6-promise-polyfill').Promise;
 //accepts new patients? = data[n].practices[n].accepts_new_patients
 
 
-function getDoctors(userInput){
+export function getDoctors(userInput){
   return new Promise(function(resolve, reject){
-    request = new XMLHttpRequest();
+    let request = new XMLHttpRequest();
     let query = (() => {
       let splitArray = userInput.split(" ");
       let tempQuery = splitArray.join("%20");
-      console.log("Search Query: " + )
+      console.log("Search Query: " + tempQuery);
       return tempQuery;
     })();
     let url = `https://api.betterdoctor.com/2016-03-01/doctors?query=${query}&location=wa-seattle&skip=0&limit=10&user_key=${process.env.exports.apiKey}`;
 
-    request.onload(function(){
+    request.onload = function(){
       if(request.status === 200) {
         resolve(request.response)
       } else {
         reject(Error(request.statusText))
       }
-    });
+    };
 
     request.open("GET", url, true);
-    request.send(); 
+    request.send();
   })
 }

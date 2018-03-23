@@ -5,7 +5,7 @@ import { getDoctors } from './betterDoctorApi.js';
 
 $(document).ready(function(){
 
-  $("#getDoctors").click(function(){
+  $("button#getDoctors").click(function(){
 
     let userInput = $("#input").val();
 
@@ -19,7 +19,7 @@ $(document).ready(function(){
 
         let doctorName = doctor.practices[0].name;
         let doctorImageUrl = doctor.profile.image_url;
-        let doctorAddress = doctor.practices[0].visit_address.street + ", " + doctor.practices[0].visit_address.street;
+        let doctorAddress = doctor.practices[0].visit_address.street + ", " + doctor.practices[0].visit_address.zip;
         let doctorPhone = doctor.practices[0].phones[0].number;
         let doctorNewPatients = doctor.practices[0].accepts_new_patients;
         let doctorWebsite = doctor.practices[0].website;
@@ -29,14 +29,13 @@ $(document).ready(function(){
             <div class="doctorCard">
               <h2 class="doctorName">${doctorName}</h2>
               <img class="doctorImage" src="${doctorImageUrl}">
-              <h3 class="doctorAddress">Address: ${doctorAddress} </h3>
-              <h3 class="doctorPhone">Phone Number: ${doctorPhone} </h3>
-              <h3 class="doctorNewPatients">Accepting New Patients: ${doctorNewPatients}</h3>
-              <h3 class="doctorWebsite"><a href="${doctorWebsite}">doctor's website</a></h3>
+              <h5 class="doctorAddress">Address: ${doctorAddress} </h5><hr>
+              <h5 class="doctorPhone">Phone Number: ${doctorPhone} </h5><hr>
+              <h5 class="doctorNewPatients">Accepting New Patients: ${doctorNewPatients}</h5><hr>
+              <h5 class="doctorWebsite"><a href="${doctorWebsite}">doctor's website</a></h5>
             </div>
           </div>`)
       });
     });
   });
-
 })

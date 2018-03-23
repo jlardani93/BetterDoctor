@@ -39,7 +39,9 @@
   },
   "dependencies": {
     "jquery": "^3.3.1",
-    "md5": "^2.2.1"
+    "md5": "^2.2.1",
+    "npm-assets": "^0.1.2"
   },
+  "assets": ["src/video/Tourists.mp4"],
   "description": ""
 }

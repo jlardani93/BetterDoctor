@@ -5,15 +5,30 @@
     <title>Better Doctor Epicodus Project</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   </head>
+
+  <!-- <div id="coverVideo">
+    <video autoplay="true" loop="true">
+      <source src="https://drive.google.com/uc?export=download&id=1_jzkOelh1xXzjS5xfDlztp44bpyATeyY" type='video/mp4'/>" type="video/mp4">
+    </video>
+  </div> -->
+
   <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Seattle Doctors</h1>
+        </div>
+      </div>
+    </div>
 
     <div class="container" id="searchContainer">
       <div class="row">
         <div class="col-md-8">
-          <input type="text" id="input" placeholder="search ailment ex.'sore throat'">
+          <input type="text" id="input" placeholder='search ailment (ex: "sore throat")'>
         </div>
         <div class="col-md-4">
-          <button type="button" id="getDoctors"></button>
+          <button type="button" id="getDoctors">Search for Doctors</button>
         </div>
       </div>
     </div>
@@ -22,7 +37,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="row" id="responseRow">
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
               <div class="doctorCard">
                 <h2 class="doctorName"></h2>
                 <img class="doctorImage" src="">
@@ -31,7 +46,7 @@
                 <h3 class="doctorNewPatients"></h3>
                 <h3 class="doctorWebsite">Website: <a href="#"></a></h3>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -40,6 +55,9 @@
 </html>
 
 <style type="text/css">
+  body {
+    margin-top: 100px;
+  }
 
   img {
     width: 200px;
@@ -48,17 +66,78 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
   }
 
   button {
     display: block !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    border-radius: 15px;
+    box-shadow: 0 0 10px black;
+    background-color: #2b333f;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+  }
+
+  button:hover {
+    box-shadow: 0 0 5px black;
+    transform: scale(90%, 90%);
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  hr {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+
+  video {
+    height: 105%;
+    overflow: hidden;
+  }
+
+  .doctorWebsite {
+    text-align: center;
   }
 
   .doctorCard {
-    margin: 30px;
+    margin: 10px;
     background-color: lightblue;
+    border: 1px solid black;
+    box-shadow: 0 0 5px black;
+    padding: 10px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 70px;
+    text-shadow: 0 0 10px black;
+    margin-bottom: 100px;
+  }
+
+  #coverVideo {
+    z-index: -1;
+    opacity: 0.8;
+    position: fixed;
+    top: -5px;
+    bottom: -5px;
+    height: 105%;
+    overflow: hidden;
+  }
+
+  #input {
+    width: 75%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
   }
 
 </style>
