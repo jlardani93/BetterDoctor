@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Better Doctor Epicodus Project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <div class="container" id="searchContainer">
+      <div class="row">
+        <div class="col-md-8">
+          <input type="text" id="input" placeholder="search ailment ex.'sore throat'">
+        </div>
+        <div class="col-md-4">
+          <button type="button" id="getDoctors"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="responseContainer">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row" id="responseRow">
+            <div class="col-md-3">
+              <div class="doctorCard">
+                <h2 class="doctorName"></h2>
+                <img class="doctorImage" src="">
+                <h3 class="doctorAddress">Address: </h3>
+                <h3 class="doctorPhone">Phone Number: </h3>
+                <h3 class="doctorNewPatients"></h3>
+                <h3 class="doctorWebsite">Website: <a href="#"></a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style type="text/css">
+
+  img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  button {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .doctorCard {
+    margin: 30px;
+    background-color: lightblue;
+  }
+
+</style>
